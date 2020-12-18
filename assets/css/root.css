@@ -1,0 +1,372 @@
+/*
+Contents are ordered by
+- Variables
+- Core element changes
+- Helper & Structure classes
+- Item classes
+- Media queries
+- Ids and misc
+
+This is mostly to allow for overwriting due to the 3-part-css-selection rule.
+#id types are not supposed to be overwritten and therefore can be placed at the bottom
+while core types have a base style which following selectors overwrite.
+Media queries are also placed low because their use is to change previous css behaviour depending 
+on screen size. Item and Helper classes are a toss up. And finally variables are a special case 
+since they provide pre declared value for other attributes with improved visibilty for humans.
+*/
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --lightblue: #c7ddea;
+  --orange: #f17949;
+  --amber: #fab131;
+  --lightgray: #ebebeb;
+  --gray: #a9a19e;
+  --mediumgray: #50585e;
+  --darkgray: #777574;
+  --wrapper-width: 1120px;
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 992px;
+  --breakpoint-desktop: 1200px;
+}
+
+/* @font-face {
+  font-family: 'FiraSansRegular';
+  src: url('/assets/fonts/FiraSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'FrankRuhlLibreRegular';
+  src: url('/assets/fonts/FrankRuhlLibre-Regular.ttf');
+} */
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  color: var(--mediumgray);
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Frank Ruhl Libre', serif;
+  color: var(--black);
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+a, button, [href] {
+  cursor: pointer;
+}
+
+ul, li {
+  list-style: none;
+}
+
+section, footer {
+  padding: 0.1px;
+}
+
+.is-fullsize {
+  min-height: 100vh;
+  padding: 0.01em;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.blocked
+{
+    position:relative;
+}
+
+.blocked:after
+{
+    content: '';
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1;
+    background: transparent;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1 1 calc(var(--breakpoint-mobile)/2);
+  justify-content: center;
+}
+
+.flex-item-3by3 {
+  flex: 1 1 calc(900px/3);
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: var(--wrapper-width, 1170px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+  padding: 3rem calc(50% - 150px);
+}
+
+.content.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.text-large {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.text {
+  line-height: 1.8;
+}
+
+.card-title {
+  line-height: 1.8;
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.cards {
+  justify-content: center;
+}
+
+.card {
+  width: 340px;
+  height: 440px;
+  margin: 12px 6px;
+  padding: 1rem 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.card>.card-image {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 300px;
+  z-index: 9;
+  margin-left: calc(40px/2);
+  overflow: hidden;
+}
+
+.card-image>img {
+  display: block;
+  width: 100%;
+  transform: scale(0.4);
+  margin: -150px 0 0 10px;
+}
+
+.card>.card-body {
+  background-color: var(--white);
+  height: 90%;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  border-radius: 12px;
+}
+
+.card-content {
+  margin-top: 160px;
+  padding: 1px 20px;
+  color: var(--gray);
+}
+
+.info-box::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  font-size: 38px;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-weight: bold;
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.info-box {
+  position: relative;
+  padding: 4.5rem 4rem;
+  text-align: center;
+}
+
+/* .card>*:nth-child(1) {
+  grid-row: 1;
+  grid-column: 2;
+  max-height: 230px;
+  overflow: hidden;
+  background-color: var(--lightblue);
+  border-radius: 12px;
+}
+
+.card>*:nth-child(2) {
+  grid-row: 2;
+  grid-column: 2;
+  background-color: var(--white);
+} */
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1px;
+  margin: 0;
+}
+
+.nav-button {
+  padding: 32px 34px;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.button {
+  padding: 0.85em 2.4em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+  border-radius: 2em 2em;
+  font-family: "Fira Sans";
+  text-transform: uppercase;
+}
+
+.button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.nav-button:hover {
+  background-color: #385668;
+  color: var(--orange);
+}
+
+.nav-button:active {
+  background-color: #1d2931;
+  color: var(--orange);
+}
+
+.background-family {
+  background: url('/assets/family.png') no-repeat right bottom;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-size: 300px auto;
+  padding-bottom: 12rem;
+}
+
+.p1-2 {
+  padding: 1rem 1.2rem;
+}
+
+/* @media (max-width: 768px) {
+  .wrapper {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1170px) {
+  section {}
+} */
+
+.highlight {
+  font-style: normal;
+}
+
+.white {
+  color: var(--white);
+}
+
+.black {
+  color: var(--black);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-lightgray {
+  background-color: var(--lightgray);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-darkgray {
+  background-color: var(--darkgray);
+}
+
+.bg-lightblue {
+  background-color: var(--lightblue);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-amber {
+  background-color: var(--amber);
+}
