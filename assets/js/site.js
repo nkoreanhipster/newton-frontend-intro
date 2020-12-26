@@ -14,7 +14,7 @@ const initListeners = function () {
     var scrollers = [...document.querySelectorAll('*[data-type="scrollto"]')]
     var redirecters = [...document.querySelectorAll('*[data-type="redirectto"]')]
 
-    console.log({scrollers:scrollers})
+    console.log({scrollers:scrollers,redirecters:redirecters})
 
     scrollers.map(a => a.addEventListener('click',(ev)=>{
         console.log('scrollto',{el:ev.target,attr:ev.target.getAttribute('data-target')})
@@ -26,6 +26,7 @@ const initListeners = function () {
         scrollAction(targetElement)
     }))
     redirecters.map(a => a.addEventListener('click',(ev)=>{
+        console.log(ev.target)
         var url = ev.target.getAttribute('data-target')
         if(url === null){
             console.error('url is null')

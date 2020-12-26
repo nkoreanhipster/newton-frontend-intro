@@ -99,25 +99,73 @@ section, footer {
   padding: 0.01em;
 }
 
+.is-hidden-mobile {
+  visibility: visible;
+}
+
+.is-hidden-desktop {
+  visibility: visible;
+}
+
 .unclickable {
   pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
-.blocked
-{
-    position:relative;
+.p1 {
+  padding: 1rem;
 }
 
-.blocked:after
-{
-    content: '';
-    position: absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    z-index:1;
-    background: transparent;
+.pv1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pv2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pv3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.pv4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.pv5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.ph1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ph2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.ph3 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.ph4 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.ph5 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .flex {
@@ -145,7 +193,7 @@ section, footer {
   margin-left: 0;
   margin-right: 0;
   text-align: left;
-  padding: 3rem calc(50% - 150px);
+  padding: 6rem calc(50% - 150px);
 }
 
 .content.align-center {
@@ -244,23 +292,9 @@ section, footer {
   text-align: center;
 }
 
-/* .card>*:nth-child(1) {
-  grid-row: 1;
-  grid-column: 2;
-  max-height: 230px;
-  overflow: hidden;
-  background-color: var(--lightblue);
-  border-radius: 12px;
-}
-
-.card>*:nth-child(2) {
-  grid-row: 2;
-  grid-column: 2;
-  background-color: var(--white);
-} */
-
 .nav-buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 0.1px;
@@ -269,6 +303,7 @@ section, footer {
 
 .nav-button {
   padding: 32px 34px;
+
   cursor: pointer;
   user-select: none;
   -moz-user-select: none;
@@ -313,19 +348,31 @@ section, footer {
   padding-bottom: 12rem;
 }
 
+.manbaby {
+  background: url('/assets/man-and-baby.png') no-repeat right bottom;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-size: 300px auto;
+  padding-bottom: 12rem;
+}
+
 .p1-2 {
   padding: 1rem 1.2rem;
 }
 
-/* @media (max-width: 768px) {
-  .wrapper {
-    max-width: 720px;
+@media (max-width: 768px) {
+  .is-hidden-mobile {
+    visibility: hidden;
+    display: none;
   }
 }
 
 @media (min-width: 1170px) {
-  section {}
-} */
+  .is-hidden-desktop {
+    visibility: hidden;
+    display: none;
+  }
+}
 
 .highlight {
   font-style: normal;
@@ -337,6 +384,10 @@ section, footer {
 
 .black {
   color: var(--black);
+}
+
+.orange {
+  color: var(--orange);
 }
 
 .bg-white {

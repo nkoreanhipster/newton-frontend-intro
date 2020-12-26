@@ -5,14 +5,81 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/root.css" />
     <script type="text/javascript" src="assets/js/site.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <i>todo;</i>
-    </main>
+    <div class="bg-lightgray is-fullsize">
+        <div class="wrapper">
+
+            <section class="banner">
+                <div class="bg-lightblue flex-item manbaby">
+                    <div class="content">
+                        <h2>Oh hello there</h2>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <nav>
+                <div>
+                    <ul class="nav-buttons">
+                        <li class="nav-button text-small" data-target="home.html" data-type="redirectto"><a
+                                class="unclickable">Home</a></li>
+                        <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Our Offer</a>
+                        </li>
+                        <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Why us</a></li>
+                        <li class="nav-button text-small" data-target="contact.html" data-type="redirectto"><a
+                                class="unclickable">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <section class="bg-gray">
+                <div class="content">
+                    <h2 class="white">What's on your mind?</h2>
+                    <div>
+                        <form action="/message" method="POSt">
+                            <div>
+                                <input type="email" data-label="Your email" name="email" />
+                            </div>
+                            <div>
+                                <input type="text" data-label="Your message" name="message" />
+                            </div>
+                            <div>
+                                <input type="submit" name="submit" value="Send message" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-amber">
+                <div class="content">
+                    <h2 class="white">Come visit us</h2>
+                </div>
+            </section>
+
+            <section class="bg-darkgray">
+                <div style="background: url('/assets/map.png') no-repeat right bottom;">
+                    <div class="content">
+                        <h2 class="orange">Map stuff here</h2>
+                    </div>
+                </div>
+            </section>
+
+            <footer data-target="footer" class="bg-darkgray">
+                <div class="content"></div>
+            </footer>
+        </div>
+    </div>
 </body>
 
 </html>

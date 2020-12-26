@@ -48,15 +48,16 @@
                 </div>
             </section>
 
-            <nav class="">
+            <nav class="is-hidden-mobile">
                 <div class="container">
                     <ul class="nav-buttons">
-                        <li class="nav-button text-small" data-target=".banner" data-type="scrollto"><a>Home</a></li>
+                        <li class="nav-button text-small" data-target=".banner" data-type="scrollto"><a
+                                class="unclickable">Home</a></li>
                         <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Our Offer</a>
                         </li>
                         <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Why us</a></li>
-                        <li class="nav-button text-small" data-target="contact.html" data-type="redirectto">
-                            <a>Contact</a></li>
+                        <li class="nav-button text-small" data-target="contact.html" data-type="redirectto"><a
+                                class="unclickable">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -90,7 +91,7 @@
                     <div class="flex cards">
                         <div class="card">
                             <div class="card-image bg-amber">
-                                <img class="" src="/assets/child.png" />
+                                <img src="/assets/child.png" />
                             </div>
                             <div class="card-body">
                                 <div class="card-content">
@@ -106,7 +107,7 @@
                         </div>
                         <div class="card">
                             <div class="card-image bg-orange">
-                                <img class="" src="/assets/adult.png" />
+                                <img src="/assets/adult.png" style="margin: -390px 0px 0px 0px;" />
                             </div>
                             <div class="card-body">
                                 <div class="card-content">
@@ -123,7 +124,7 @@
                         </div>
                         <div class="card">
                             <div class="card-image bg-lightblue">
-                                <img class="" src="/assets/old.png" />
+                                <img src="/assets/old.png" />
                             </div>
                             <div class="card-body">
                                 <div class="card-content">
@@ -142,24 +143,26 @@
             </section>
 
             <section class="bg-amber">
-                <div class="content">
-                    <h2 class="white">About us</h2>
-                    <p class="">Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Morbi ac ultricies massa.
-                        Donec id malesuada magna. Pellentesque
-                        aliquet libero erat, fermentum commodo
-                        sapien congue ac. Integer a elit lorem.
-                        Vestibulum id venenatis diam, et eleifend
-                        augue. Curabitur ex tortor, auctor lobortis
-                        augue at, euismod bibendum neque.
-                        Aenean ullamcorper nibh vitae orci laoreet,
-                        eu dictum nisi ultrices. Sed condimentum
-                        nibh neque, at ultricies augue facilisis non.</p>
-                    <p>Pellentesque a tellus mauris. Nam sodales
-                        pretium rutrum. Aenean imperdiet, leo nec
-                        consectetur blandit, risus erat commodo
-                        tortor, sit amet dignissim orci lorem vel
-                        felis. Ut tempus dignissim.</p>
+                <div class="container">
+                    <div class="content">
+                        <h2 class="white">About us</h2>
+                        <p class="">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Morbi ac ultricies massa.
+                            Donec id malesuada magna. Pellentesque
+                            aliquet libero erat, fermentum commodo
+                            sapien congue ac. Integer a elit lorem.
+                            Vestibulum id venenatis diam, et eleifend
+                            augue. Curabitur ex tortor, auctor lobortis
+                            augue at, euismod bibendum neque.
+                            Aenean ullamcorper nibh vitae orci laoreet,
+                            eu dictum nisi ultrices. Sed condimentum
+                            nibh neque, at ultricies augue facilisis non.</p>
+                        <p>Pellentesque a tellus mauris. Nam sodales
+                            pretium rutrum. Aenean imperdiet, leo nec
+                            consectetur blandit, risus erat commodo
+                            tortor, sit amet dignissim orci lorem vel
+                            felis. Ut tempus dignissim.</p>
+                    </div>
                 </div>
             </section>
 
@@ -199,10 +202,10 @@
                 </div>
             </section>
 
-            <footer data-target="footer" class="section bg-darkgray">
+            <footer data-target="footer" class="bg-darkgray">
                 <div class="bg-mediumgray">
                     <div class="center" style="padding:1rem;">
-                        <i class="highlight unclickable blocked">^</i>
+                        <i class="highlight unclickable">^</i>
                         <button data-target=".banner" data-type="scrollto">
                             Take me up again
                         </button>
