@@ -1,7 +1,7 @@
-# Systemutvecklingsprojekt
+# Introduktionsprojekt
 ## Newton Frondend Intro
--a jakob andersson
-Forked from *[https://github.com/niklastheman/Systemutvecklingsprojekt.git](https://github.com/niklastheman/Systemutvecklingsprojekt.git)
+- Forked from [https://github.com/zocom-david-lundholm/newton-frontend-intro](https://github.com/zocom-david-lundholm/newton-frontend-intro)
+- author: jakob andersson
 
 # Run
 
