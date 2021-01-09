@@ -18,26 +18,29 @@
     <div class="bg-lightgray is-fullsize">
         <div class="wrapper">
 
-            <section class="banner">
+            <section class="banner is-hidden-mobile">
                 <div class="bg-lightblue flex-item manbaby">
                     <div class="content">
-                        <h2>Oh hello there</h2>
+                        <h2 class="no-wrap">Oh hello there</h2>
                     </div>
                 </div>
             </section>
 
-
-
-            <nav>
-                <div>
+            <nav class="is-hidden-mobile">
+                <div class="container">
                     <ul class="nav-buttons">
-                        <li class="nav-button text-small" data-target="home.html" data-type="redirectto"><a
-                                class="unclickable">Home</a></li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Our Offer</a>
+                        <li class="nav-button text-small" data-target="home.html" data-type="redirectto">
+                            <a class="unclickable">Home</a>
                         </li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto"><a>Why us</a></li>
-                        <li class="nav-button text-small" data-target="contact.html" data-type="redirectto"><a
-                                class="unclickable">Contact</a></li>
+                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
+                            <a>Our Offer</a>
+                        </li>
+                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
+                            <a>Why us</a>
+                        </li>
+                        <li class="nav-button text-small selected" data-target="contact.html" data-type="redirectto">
+                            <a class="unclickable">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -68,7 +71,7 @@
             </section>
 
             <section class="bg-darkgray">
-                <div style="background: url('/assets/map.png') no-repeat right bottom;">
+                <div style="background: url('assets/map.png') no-repeat right bottom;">
                     <div class="content">
                         <h2 class="orange">Map stuff here</h2>
                     </div>

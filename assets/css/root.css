@@ -5,14 +5,8 @@ Contents are ordered by
 - Helper & Structure classes
 - Item classes
 - Media queries
-- Ids and misc
-
-This is mostly to allow for overwriting due to the 3-part-css-selection rule.
-#id types are not supposed to be overwritten and therefore can be placed at the bottom
-while core types have a base style which following selectors overwrite.
-Media queries are also placed low because their use is to change previous css behaviour depending 
-on screen size. Item and Helper classes are a toss up. And finally variables are a special case 
-since they provide pre declared value for other attributes with improved visibilty for humans.
+- Color changes
+- misc
 */
 
 :root {
@@ -114,6 +108,10 @@ section, footer {
   -webkit-user-select: none;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .p1 {
   padding: 1rem;
 }
@@ -173,6 +171,10 @@ section, footer {
   flex-wrap: wrap;
 }
 
+.container {
+
+}
+
 .flex-item {
   flex: 1 1 calc(var(--breakpoint-mobile)/2);
   justify-content: center;
@@ -218,13 +220,6 @@ section, footer {
   line-height: 1.8;
 }
 
-.card-title {
-  line-height: 1.8;
-  text-align: center;
-  font-size: 22px;
-  margin: 0;
-}
-
 .center {
   text-align: center;
 }
@@ -268,6 +263,13 @@ section, footer {
   border-radius: 12px;
 }
 
+.card-title {
+  line-height: 1.8;
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+}
+
 .card-content {
   margin-top: 160px;
   padding: 1px 20px;
@@ -295,19 +297,26 @@ section, footer {
 .nav-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 0.1px;
+  padding: 0 52px;
   margin: 0;
 }
 
 .nav-button {
-  padding: 32px 34px;
-
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 22px;
   cursor: pointer;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+}
+
+.nav-button:not(.selected) {
+  color: var(--gray);
 }
 
 .button {
@@ -341,7 +350,7 @@ section, footer {
 }
 
 .background-family {
-  background: url('/assets/family.png') no-repeat right bottom;
+  background: url('../family.png') no-repeat right bottom;
   background-color: rgba(0, 0, 0, 0);
   background-size: auto;
   background-size: 300px auto;
@@ -349,11 +358,11 @@ section, footer {
 }
 
 .manbaby {
-  background: url('/assets/man-and-baby.png') no-repeat right bottom;
+  background: url('../man-and-baby.png') no-repeat right bottom;
   background-color: rgba(0, 0, 0, 0);
   background-size: auto;
   background-size: 300px auto;
-  padding-bottom: 12rem;
+  min-height: 500px;
 }
 
 .p1-2 {
@@ -364,6 +373,18 @@ section, footer {
   .is-hidden-mobile {
     visibility: hidden;
     display: none;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    padding: 1rem 2rem;
+  }
+
+  .pvm9{
+    padding-top: 9rem;
+    padding-bottom: 9rem;
   }
 }
 
