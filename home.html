@@ -9,23 +9,28 @@
     <script type="text/javascript" src="assets/js/site.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="bg-lightgray is-fullsize">
         <div class="wrapper">
 
+            <section class="bg-lightblue is-hidden-desktop pv7">
+
+            </section>
+
             <section class="banner flex">
-                <div class="bg-lightblue flex-item background-family">
+                <div class="bg-lightblue flex-item background-family is-hidden-mobile">
                     <div class="content">
                         <h2>We´ve got you Covered.</h2>
-                        <p class="text">Together we keep each other safe at home or at work. By paying a tiny fee a day,
-                            you are
-                            fully
-                            insured all day long. You get it all for as little as <i class="white highlight">$0.4 per
-                                pay.</i></p>
+                        <p class="text">
+                            Together we keep each other safe at home or at work. By paying a tiny fee a day,you are
+                            fully insured all day long. You get it all for as little as <i class="white highlight">$0.4
+                                per pay.</i></p>
                         <button class="button">Join now</button>
                     </div>
                 </div>
@@ -47,21 +52,13 @@
                 </div>
             </section>
 
-            <nav class="is-hidden-mobile">
+            <nav class="ph6 is-hidden-mobile">
                 <div class="">
                     <ul class="nav-buttons">
-                        <li class="nav-button text-small selected" data-target="home.html" data-type="redirectto">
-                            <a class="unclickable">Home</a>
-                        </li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
-                            <a>Our Offer</a>
-                        </li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
-                            <a>Why us</a>
-                        </li>
-                        <li class="nav-button text-small" data-target="contact.html" data-type="redirectto">
-                            <a class="unclickable">Contact</a>
-                        </li>
+                        <a class="nav-button selected">Home</a>
+                        <a class="nav-button" data-action="click|scroll|section.bg-gray">Our Offer</a>
+                        <a class="nav-button" data-action="click|scroll|footer">Why us</a>
+                        <a class="nav-button" data-action="click|redirect" href="contact.html">Contact</a>
                     </ul>
                 </div>
             </nav>
@@ -207,12 +204,9 @@
             </section>
 
             <footer data-target="footer" class="bg-darkgray">
-                <div class="bg-mediumgray">
-                    <div class="center" style="padding:1rem;">
-                        <i class="highlight unclickable">^</i>
-                        <button data-target=".banner" data-type="scrollto">
-                            Take me up again
-                        </button>
+                <div class="bg-gray">
+                    <div class="center">
+                        <p id="take_me_up" class="unhighlightable" data-action="click|scroll|.banner" href="">Take me up again</p>
                     </div>
                 </div>
                 <div class="content"></div>

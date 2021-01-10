@@ -9,7 +9,8 @@
     <script type="text/javascript" src="assets/js/site.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
 </head>
@@ -18,7 +19,7 @@
     <div class="bg-lightgray is-fullsize">
         <div class="wrapper">
 
-            <section class="banner is-hidden-mobile">
+            <section class="banner">
                 <div class="bg-lightblue flex-item manbaby">
                     <div class="content">
                         <h2 class="no-wrap">Oh hello there</h2>
@@ -26,61 +27,67 @@
                 </div>
             </section>
 
-            <nav class="is-hidden-mobile">
-                <div class="container">
+            <nav class="ph6">
+                <div class="">
                     <ul class="nav-buttons">
-                        <li class="nav-button text-small" data-target="home.html" data-type="redirectto">
-                            <a class="unclickable">Home</a>
-                        </li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
-                            <a>Our Offer</a>
-                        </li>
-                        <li class="nav-button text-small" data-target="footer" data-type="scrollto">
-                            <a>Why us</a>
-                        </li>
-                        <li class="nav-button text-small selected" data-target="contact.html" data-type="redirectto">
-                            <a class="unclickable">Contact</a>
-                        </li>
+                        <a class="nav-button" href="home.html" data-action="click|redirect">Home</a>
+                        <a class="nav-button" data-action="click|scroll|section.bg-gray">Our Offer</a>
+                        <a class="nav-button" data-action="click|scroll|footer">Why us</a>
+                        <a class="nav-button selected">Contact</a>
                     </ul>
                 </div>
             </nav>
 
             <section class="bg-gray">
-                <div class="content">
-                    <h2 class="white">What's on your mind?</h2>
-                    <div>
-                        <form action="/message" method="POSt">
-                            <div>
+                <div class="container">
+                    <div class="column">
+                        <div class="content">
+                            <h2 class="white">What's on your mind?</h2>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <form class="content" action="/message" method="POSt">
+                            <div class="mb3">
+                                <label class="lightgray" for="email">Email</label>
                                 <input type="email" data-label="Your email" name="email" />
                             </div>
-                            <div>
-                                <input type="text" data-label="Your message" name="message" />
+                            <div class="mb3">
+                                <label class="lightgray" for="message">Your message</label>
+                                <textarea class="input" rows="4" name="message"></textarea>
                             </div>
                             <div>
-                                <input type="submit" name="submit" value="Send message" />
+                                <input class="button" data-action="click|openmodal|.modal" type="submit" name="submit"
+                                    value="Send message" />
                             </div>
                         </form>
                     </div>
                 </div>
             </section>
 
-            <section class="bg-amber">
-                <div class="content">
-                    <h2 class="white">Come visit us</h2>
-                </div>
-            </section>
 
-            <section class="bg-darkgray">
-                <div style="background: url('assets/map.png') no-repeat right bottom;">
-                    <div class="content">
-                        <h2 class="orange">Map stuff here</h2>
+            <section class="bg-darkgray" style="background: url('assets/map.png') no-repeat;">
+                <div class="relative" style="min-height: 400px;">
+                    <div id="visit_card" class="bg-amber ph2 pv2">
+                        <h2 class="white no-wrap">Come visit us!</h2>
+                        <p class="white">2219 Griffin Street</p>
+                        <p class="white">San Francisco</p>
+                    </div>
+                    <div id="marker">
+
                     </div>
                 </div>
+
             </section>
 
             <footer data-target="footer" class="bg-darkgray">
-                <div class="content"></div>
+                <div class="pv6"></div>
             </footer>
+        </div>
+        <div class="modal unclickable">
+            <a class="close unhighlightable" data-action="click|closemodal|.modal">X</a>
+            <div class="ph6 pv5">
+                <p>Message sent</p>
+            </div>
         </div>
     </div>
 </body>

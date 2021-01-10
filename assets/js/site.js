@@ -1,31 +1,64 @@
-const listeners = {}
-
-const scrollAction = function (target) {
-    target.scrollIntoView({
-        behavior: 'smooth'
-    })
+const listenerCallback = {
+    scroll: function (ev, el) {
+        el.scrollIntoView({
+            behavior: 'smooth'
+        })
+    },
+    redirect: function (ev, el) {
+        window.location = el.getAttribute('href')
+    },
+    closemodal: function (ev, el) {
+        el.classList.remove('open')
+        el.classList.add('unclickable')
+    },
+    openmodal: function (ev, el) {
+        if (el.classList.contains('open')) {
+            listenerCallback.closemodal(ev, el)
+            return
+        }
+        el.classList.add('open')
+        el.classList.remove('unclickable')
+    }
 }
-const redirectAction = function (url) {
-    window.location = url
-}
 
+// Catcher for all event listeners
+// <element data-action="type|action|target">
 const initListeners = function () {
-    var scrollers = [...document.querySelectorAll('*[data-type="scrollto"]')],
-        redirecters = [...document.querySelectorAll('*[data-type="redirectto"]')]
+    ;[...document.querySelectorAll("*[data-action]")].map(clickedElement => {
+        var [type, action = console.log, target = ""] = clickedElement.getAttribute('data-action').split('|')
+        let targetElement = target === "" ? clickedElement : document.querySelector(target);
+        console.log(type, targetElement)
+        clickedElement.addEventListener(type, (ev) => {
+            ev.preventDefault()
+            try {
+                if (!listenerCallback.hasOwnProperty(action))
+                    return;
+                listenerCallback[action](ev, targetElement)
+            } catch (err) {
+                console.error(err, {
+                    type: type,
+                    action: action,
+                    target: target
+                })
+            }
+        })
+    })
+    // var scrollers = [...document.querySelectorAll('*[data-type="scrollto"]')],
+    //     redirecters = [...document.querySelectorAll('*[data-type="redirectto"]')]
 
-    // Window scrollers
-    scrollers.map(a => a.addEventListener('click', (ev) => {
-        const targetElement = document.querySelector(ev.target.getAttribute('data-target'))
-        if (targetElement !== null)
-            scrollAction(targetElement)
-    }))
+    // // Window scrollers
+    // scrollers.map(a => a.addEventListener('click', (ev) => {
+    //     const targetElement = document.querySelector(ev.target.getAttribute('data-target'))
+    //     if (targetElement !== null)
+    //         scrollAction(targetElement)
+    // }))
 
-    // URL redirect
-    redirecters.map(a => a.addEventListener('click', (ev) => {
-        const targetElement = ev.target.getAttribute('data-target')
-        if (targetElement !== null)
-            redirectAction(targetElement)
-    }))
+    // // URL redirect
+    // redirecters.map(a => a.addEventListener('click', (ev) => {
+    //     const targetElement = ev.target.getAttribute('data-target')
+    //     if (targetElement !== null)
+    //         redirectAction(targetElement)
+    // }))
 }
 
 /*READYSTATE*/
